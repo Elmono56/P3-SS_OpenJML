@@ -24,48 +24,70 @@ import java.io.Serializable;
  */
 public class MultipartDef implements Serializable {
 
+    //@ private invariant serialVersionUID == 1L;
     private static final long serialVersionUID = 1L;
 
     // ------------------------------------------------------------- Properties
+
+    /*@ spec_public
+    @ private invariant location != null;*/
     private String location;
 
+    //@ ensures \result != null;
     public String getLocation() {
         return location;
     }
 
+    /*@ requires location != null;
+    @ ensures this.location == location;*/
     public void setLocation(String location) {
         this.location = location;
     }
 
-
+    
+    /*@ spec_public
+    @ private invariant maxFileSize != null;*/
     private String maxFileSize;
 
+    //@ ensures \result != null;
     public String getMaxFileSize() {
         return maxFileSize;
     }
 
+    /*@ requires maxFileSize != null;
+    @ ensures this.maxFileSize == maxFileSize;*/
     public void setMaxFileSize(String maxFileSize) {
         this.maxFileSize = maxFileSize;
     }
 
 
+    /*@ spec_public
+    @ private invariant maxRequestSize != null;*/
     private String maxRequestSize;
 
+    //@ ensures \result != null;
     public String getMaxRequestSize() {
         return maxRequestSize;
     }
 
+    /*@ requires maxRequestSize != null;
+    @ ensures this.maxRequestSize == maxRequestSize;*/
     public void setMaxRequestSize(String maxRequestSize) {
         this.maxRequestSize = maxRequestSize;
     }
 
 
+    /*@ spec_public
+    @ private invariant fileSizeThreshold != null;*/
     private String fileSizeThreshold;
 
+    //@ ensures \result != null;
     public String getFileSizeThreshold() {
         return fileSizeThreshold;
     }
 
+    /*@ requires fileSizeThreshold != null;
+    @ ensures this.fileSizeThreshold == fileSizeThreshold;*/
     public void setFileSizeThreshold(String fileSizeThreshold) {
         this.fileSizeThreshold = fileSizeThreshold;
     }
