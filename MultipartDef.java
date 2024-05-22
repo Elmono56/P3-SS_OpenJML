@@ -29,65 +29,61 @@ public class MultipartDef implements Serializable {
 
     // ------------------------------------------------------------- Properties
 
-    /*@ spec_public
-    @ private invariant location != null;*/
+    //@ spec_public 
     private String location;
 
-    //@ ensures \result != null;
+    //@ ensures \result == location && \result != null;
     public String getLocation() {
         return location;
     }
 
-    /*@ requires location != null;
-    @ ensures this.location == location;*/
+    //@ requires location != null;
+    //@ ensures this.location == location;
     public void setLocation(String location) {
         this.location = location;
     }
 
-    
-    /*@ spec_public
-    @ private invariant maxFileSize != null;*/
+
+    //@ spec_public 
     private String maxFileSize;
 
-    //@ ensures \result != null;
+    //@ ensures \result == maxFileSize && \result != null;
     public String getMaxFileSize() {
         return maxFileSize;
     }
 
-    /*@ requires maxFileSize != null;
-    @ ensures this.maxFileSize == maxFileSize;*/
+    //@ requires maxFileSize != null;
+    //@ ensures this.maxFileSize == maxFileSize;
     public void setMaxFileSize(String maxFileSize) {
         this.maxFileSize = maxFileSize;
     }
 
 
-    /*@ spec_public
-    @ private invariant maxRequestSize != null;*/
+    //@ spec_public 
     private String maxRequestSize;
 
-    //@ ensures \result != null;
+   //@ ensures \result == maxRequestSize && \result != null;
     public String getMaxRequestSize() {
         return maxRequestSize;
     }
 
-    /*@ requires maxRequestSize != null;
-    @ ensures this.maxRequestSize == maxRequestSize;*/
+    //@ requires maxRequestSize != null;
+    //@ ensures this.maxRequestSize == maxRequestSize;
     public void setMaxRequestSize(String maxRequestSize) {
         this.maxRequestSize = maxRequestSize;
     }
 
 
-    /*@ spec_public
-    @ private invariant fileSizeThreshold != null;*/
+    //@ spec_public
     private String fileSizeThreshold;
 
-    //@ ensures \result != null;
+    //@ ensures \result == fileSizeThreshold && \result != null;
     public String getFileSizeThreshold() {
         return fileSizeThreshold;
     }
 
-    /*@ requires fileSizeThreshold != null;
-    @ ensures this.fileSizeThreshold == fileSizeThreshold;*/
+    //@ requires fileSizeThreshold != null;
+    //@ ensures this.fileSizeThreshold == fileSizeThreshold;
     public void setFileSizeThreshold(String fileSizeThreshold) {
         this.fileSizeThreshold = fileSizeThreshold;
     }
