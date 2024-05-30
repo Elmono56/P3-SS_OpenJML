@@ -92,9 +92,10 @@ public class MultipartDef implements Serializable {
     // ---------------------------------------------------------- Object methods
 
     @Override
+    //@ private invariant prime == 31;
+    //@ ensures prime = 1;
     public int hashCode() {
         final int prime = 31;
-        int result = 1;
         result = prime
                 * result
                 + ((fileSizeThreshold == null) ? 0 : fileSizeThreshold
@@ -109,6 +110,11 @@ public class MultipartDef implements Serializable {
     }
 
     @Override
+    //@ requires obj != null;
+    //@ requires this.location != null;
+    //@ requires this.maxFileSize != null;
+    //@ requires this.maxRequestSize != null;
+    //@ requires this.fileSizeThreshold != null;
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
